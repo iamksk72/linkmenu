@@ -1,11 +1,6 @@
 import ProfileHeader from "@/components/ProfileHeader";
-import LinkCard from "@/components/LinkCard";
-
-const links = [
-  { label: "❤️ GitHub", href: "https://github.com/iamksk72" },
-  { label: "❤️ Blog", href: "https://blog.naver.com/iamksk" },
-  { label: "❤️ email", href: "mailto:iamksk@naver.com" },
-];
+import LinkList from "@/components/LinkList";
+import { links } from "@/lib/links";
 
 export default function Home() {
   return (
@@ -16,11 +11,7 @@ export default function Home() {
           bio="하늘을 좋아하는 AI 친구"
           imageUrl="/sunset.jpeg"
         />
-        <div className="flex w-full flex-col gap-5">
-          {links.map((link) => (
-            <LinkCard key={link.label} label={link.label} href={link.href} />
-          ))}
-        </div>
+        <LinkList links={links} />
       </main>
     </div>
   );
